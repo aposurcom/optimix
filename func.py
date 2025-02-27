@@ -18,7 +18,7 @@ def product_mix_optimization(product_A_material=4, product_B_material=2, materia
 
     # Constraints (Available Resources)
     # Material Constraint: 4A + 6B ≤ 60
-    solver.Add(product_A_material * product_A + product_B_material * product_B <= material_max) # Material Limit ProductA needs 4qty and ProductB needs 6qty max 60qty
+    solver.Add(product_A_material * product_A + product_B_material * product_B <= material_max) # Material Limit ProductA needs 4 and ProductB needs 6 max 60
 
     # Labor Constraint: 2A + 3B ≤ 30
     solver.Add(product_A_labor * product_A + product_B_labor * product_B <= labor_max) # Labor Limit ProductA needs 2h and productB needs 3 max 60h
