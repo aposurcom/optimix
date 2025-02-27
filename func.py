@@ -1,7 +1,7 @@
 from ortools.linear_solver import pywraplp
 
 
-def product_mix_optimization(product_A_material=4, product_B_material=2, material_max=60, product_A_labor=2, product_B_labor=3, labor_max=60):
+def product_mix_optimization(product_A_material=4, product_B_material=2, material_max=60, product_A_labor=2, product_B_labor=3, labor_max=60, product_A_price=30, product_B_price=40):
     # Create solver
     solver = pywraplp.Solver.CreateSolver('GLOP')  # GLOP is for linear programming
 
@@ -26,7 +26,7 @@ def product_mix_optimization(product_A_material=4, product_B_material=2, materia
     print("Number of constraints =", solver.NumConstraints())
 
     # Objective Function: Maximize Profit (30A + 40B)
-    solver.Maximize(30 * product_A + 40 * product_B) # ProductA $30 per unit and ProductB $40 per unit
+    solver.Maximize(product_A_price * product_A + product_B_price * product_B) # ProductA $30 per unit and ProductB $40 per unit
 
     # Solve the problem
     status = solver.Solve()
