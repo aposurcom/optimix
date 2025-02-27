@@ -39,11 +39,21 @@ class MainApp(tk.Tk):
         self.labor_max = ttk.Entry(self)
         self.labor_max.grid(row=5, column=1, pady=5)
 
+        self.lbl_product_A_price = ttk.Label(self, text="Product A Price:")
+        self.lbl_product_A_price.grid(row=6, column=0, pady=5)
+        self.product_A_price = ttk.Entry(self)
+        self.product_A_price.grid(row=6, column=1, pady=5)
+
+        self.lbl_product_B_price = ttk.Label(self, text="Product B Price:")
+        self.lbl_product_B_price.grid(row=7, column=0, pady=5)
+        self.product_B_price = ttk.Entry(self)
+        self.product_B_price.grid(row=7, column=1, pady=5)
+
         self.button = ttk.Button(self, text="Find answer", command=self.on_button_click)
-        self.button.grid(row=6, column=0, columnspan=2, pady=5)
+        self.button.grid(row=8, column=0, columnspan=2, pady=5)
 
         self.lbl_result = ttk.Label(self, text="Instructions:\n1. Input required variables\n2. Press \"Find anwer\"!")
-        self.lbl_result.grid(row=7, column=0, columnspan=2, pady=5)
+        self.lbl_result.grid(row=9, column=0, columnspan=2, pady=5)
 
     def on_button_click(self):
         # Check if all inputs are empty
@@ -55,6 +65,8 @@ class MainApp(tk.Tk):
             self.product_A_labor.insert(0, 2)
             self.product_B_labor.insert(0, 3)
             self.labor_max.insert(0, 60)
+            self.product_A_price.insert(0, 30)
+            self.product_B_price.insert(0, 40)
             self.lbl_result.config(text="Default values are set.\n Please press \"Find answer\" again.")
             return
         
@@ -66,6 +78,8 @@ class MainApp(tk.Tk):
             product_A_labor = int(self.product_A_labor.get())
             product_B_labor = int(self.product_B_labor.get())
             labor_max = int(self.labor_max.get())
+            product_A_price = int(self.product_A_price.get())
+            product_B_price = int(self.product_B_price.get())
         except ValueError:
             self.lbl_result.config(text="Please input numbers only.")
             return
@@ -81,7 +95,9 @@ class MainApp(tk.Tk):
             material_max=int(self.material_max.get()),
             product_A_labor=int(self.product_A_labor.get()),
             product_B_labor=int(self.product_B_labor.get()),
-            labor_max=int(self.labor_max.get())
+            labor_max=int(self.labor_max.get()),
+            product_A_price=int(self.product_A_price.get()),
+            product_B_price=int(self.product_B_price.get())
         )
         self.lbl_result.config(text=result)
 
