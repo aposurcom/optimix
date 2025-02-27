@@ -36,7 +36,7 @@ def product_mix_optimization(product_A_material=4, product_B_material=2, materia
     if status == pywraplp.Solver.OPTIMAL:
         result = f"Optimal production of Product A: {product_A.solution_value():.2f}\n"
         result += f"Optimal production of Product B: {product_B.solution_value():.2f}\n"
-        result += f"Maximum Profit: {solver.Objective().Value():.2f}\n"
+        result += f"Maximum Profit: {solver.Objective().Value():.2f}\n\n"
         result += f"Solved in milliseconds: {solver.wall_time():.2f}\n"
         result += f"Solved in iterations: {solver.iterations():d}\n\n"
     else:
