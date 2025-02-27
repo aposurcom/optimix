@@ -9,17 +9,17 @@ class MainApp(tk.Tk):
         # self.geometry("400x300")
 
         # Tkinter labels and input fields in 2 columns of product_A_material=4, product_B_material=2, material_max=60, product_A_labor=2, product_B_labor=3, labor_max=60
-        self.lbl_product_A_material = ttk.Label(self, text="Product A Material(qty):")
+        self.lbl_product_A_material = ttk.Label(self, text="Product A Material:")
         self.lbl_product_A_material.grid(row=0, column=0, pady=5)
         self.product_A_material = ttk.Entry(self)
         self.product_A_material.grid(row=0, column=1, pady=5)
 
-        self.lbl_product_B_material = ttk.Label(self, text="Product B Material(qty):")
+        self.lbl_product_B_material = ttk.Label(self, text="Product B Material:")
         self.lbl_product_B_material.grid(row=1, column=0, pady=5)
         self.product_B_material = ttk.Entry(self)
         self.product_B_material.grid(row=1, column=1, pady=5)
 
-        self.lbl_material_max = ttk.Label(self, text="Material Max(qty):")
+        self.lbl_material_max = ttk.Label(self, text="Material Max:")
         self.lbl_material_max.grid(row=2, column=0, pady=5)
         self.material_max = ttk.Entry(self)
         self.material_max.grid(row=2, column=1, pady=5)
